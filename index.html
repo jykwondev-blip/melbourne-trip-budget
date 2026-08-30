@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>남편과 함께, 멜버른 — 예산 정리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f7f8;
+    --card:#ffffff;
+    --line:#dfe6e6;
+    --ink:#1e2528;
+    --ink-soft:#7c8b8d;
+    --accent:#1f6f78;
+    --accent-soft:#e3f1f0;
+    --confirmed:#2f8c5a; --confirmed-bg:#e7f4ec;
+    --estimate:#d68b21; --estimate-bg:#fbf1e0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Noto Sans KR',-apple-system,sans-serif;
+    line-height:1.5; padding-bottom:60px;
+  }
+  .wrap{max-width:600px;margin:0 auto;padding:0 16px;}
+
+  header{padding:32px 0 18px;}
+  header .emoji{font-size:30px; margin-bottom:8px;}
+  header h1{font-size:22px; font-weight:800; margin:0 0 6px;}
+  header p{margin:0; font-size:13.5px; color:var(--ink-soft); font-weight:500;}
+  .chip-row{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;}
+  .chip{
+    background:var(--card); border:1px solid var(--line);
+    border-radius:100px; padding:7px 13px;
+    font-size:12px; font-weight:600; color:var(--ink-soft);
+  }
+
+  .grand{
+    background:var(--ink); color:#fff;
+    border-radius:18px; padding:26px 22px; margin:20px 0 24px;
+  }
+  .grand .label{font-size:12.5px; font-weight:600; color:rgba(255,255,255,0.55); margin-bottom:6px;}
+  .grand .amount{font-size:30px; font-weight:800; letter-spacing:-0.01em;}
+  .grand .sub{font-size:12.5px; color:rgba(255,255,255,0.55); margin-top:6px;}
+  .grand .per{
+    display:flex; justify-content:space-between; margin-top:16px;
+    padding-top:16px; border-top:1px solid rgba(255,255,255,0.14);
+    font-size:13px; color:rgba(255,255,255,0.85);
+  }
+  .grand .per b{font-weight:800; color:#fff;}
+
+  .cat{
+    background:var(--card); border-radius:18px; padding:20px;
+    margin-bottom:14px; box-shadow:0 1px 3px rgba(30,37,40,0.05);
+  }
+  .cat-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;}
+  .cat-head .left{display:flex; align-items:center; gap:10px;}
+  .cat-head .icon{font-size:19px;}
+  .cat-head .title{font-size:15px; font-weight:800;}
+  .cat-head .total{font-size:15px; font-weight:800; color:var(--accent);}
+
+  .status{
+    display:inline-block; font-size:10.5px; font-weight:700;
+    padding:2px 8px; border-radius:100px; margin-bottom:12px;
+  }
+  .status.confirmed{color:var(--confirmed); background:var(--confirmed-bg);}
+  .status.estimate{color:var(--estimate); background:var(--estimate-bg);}
+
+  .row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:8px 0; border-top:1px solid var(--line);
+    font-size:13px;
+  }
+  .row:first-of-type{border-top:none; padding-top:0;}
+  .row .name{color:var(--ink);}
+  .row .name .note{display:block; font-size:11px; color:var(--ink-soft); font-weight:400; margin-top:1px;}
+  .row .won{font-weight:700; white-space:nowrap; padding-left:10px;}
+  .mini-tag{
+    display:inline-block; font-size:9.5px; font-weight:700;
+    padding:1px 6px; border-radius:100px; margin-left:6px; vertical-align:middle;
+  }
+  .mini-tag.ok{color:var(--confirmed); background:var(--confirmed-bg);}
+  .mini-tag.est{color:var(--estimate); background:var(--estimate-bg);}
+
+  .note-foot{
+    font-size:11.5px; color:var(--ink-soft); text-align:center; margin-top:10px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="emoji">🚋</div>
+    <h1>멜버른 여행 예산 정리</h1>
+    <p>남편과 함께, 2026.10.02 – 10.11 (현지 7박) · 2인 기준</p>
+    <div class="chip-row">
+      <div class="chip">💱 1AUD ≈ 1,000원 기준</div>
+      <div class="chip">👥 2인 (남편 + 나)</div>
+    </div>
+  </header>
+
+  <div class="grand">
+    <div class="label">전체 예상 경비 (2인 합계)</div>
+    <div class="amount">약 630만원</div>
+    <div class="sub">항공 · 숙소 · 현지교통 · 투어/입장료 · 식비 포함 · 쇼핑/기념품 별도</div>
+    <div class="per"><span>1인 기준</span><b>약 315만원</b></div>
+  </div>
+
+  <!-- 항공권 -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="left"><span class="icon">✈️</span><span class="title">항공권</span></div>
+      <span class="total">3,550,600원</span>
+    </div>
+    <span class="status estimate">검색 견적가 (아직 미예약)</span>
+    <div class="row"><span class="name">중국동방항공 MU5034+MU0737 인천→멜버른<span class="mini-tag est">견적</span><span class="note">2인 합계, 상하이(PVG) 경유, 10/2 16:20 출발 → 10/3 09:00 도착</span></span><span class="won">포함</span></div>
+    <div class="row"><span class="name">가루다항공 GA0717+GA0878 멜버른→인천<span class="mini-tag est">견적</span><span class="note">2인 합계, 자카르타(CGK) 경유, 10/10 16:30 출발 → 10/11 08:30 도착</span></span><span class="won">포함</span></div>
+    <div class="row"><span class="name">총 항공권 요금<span class="note">2명, 일반석 · 무료 위탁수하물 포함</span></span><span class="won">3,550,600원</span></div>
+  </div>
+
+  <!-- 숙소 -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="left"><span class="icon">🏨</span><span class="title">숙소</span></div>
+      <span class="total">1,415,000원</span>
+    </div>
+    <span class="status confirmed">확정</span>
+    <div class="row"><span class="name">West Melbourne 숙소 7박<span class="mini-tag ok">확정</span><span class="note">Dudley Street, West Melbourne, VIC 3003 · 체크인 10/3(토) 14:00 이후 · 체크아웃 10/10(토) 10:00 이전</span></span><span class="won">1,415,000원</span></div>
+  </div>
+
+  <!-- 현지교통 -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="left"><span class="icon">🚋</span><span class="title">현지 교통비</span></div>
+      <span class="total">약 15만원</span>
+    </div>
+    <span class="status estimate">일정표 기준 추정</span>
+    <div class="row"><span class="name">SkyBus 공항↔CBD 왕복<span class="note">2인, 10/3 도착 · 10/10 출발</span></span><span class="won">약 83,000원</span></div>
+    <div class="row"><span class="name">Myki 카드 충전(트램·기차)<span class="note">2인, 현지 8일 이동 합계</span></span><span class="won">약 70,000원</span></div>
+  </div>
+
+  <!-- 투어/입장료 -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="left"><span class="icon">🎫</span><span class="title">투어 · 입장료</span></div>
+      <span class="total">약 48만원</span>
+    </div>
+    <span class="status estimate">2인 기준 추정</span>
+    <div class="row"><span class="name">그레이트 오션 로드 데이투어(버스+가이드)<span class="note">2인, 10/5</span></span><span class="won">약 36만원</span></div>
+    <div class="row"><span class="name">퍼핑빌리 증기기차 왕복<span class="note">2인, 10/7</span></span><span class="won">약 12만원</span></div>
+    <div class="row"><span class="name">로열 보타닉 가든 · 퀸 빅토리아 마켓 · 세인트 킬다</span><span class="won">무료</span></div>
+  </div>
+
+  <!-- 식비 -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="left"><span class="icon">🍖</span><span class="title">식비</span></div>
+      <span class="total">약 70만원</span>
+    </div>
+    <span class="status estimate">맛집 미정 · 자가조리 반영 추정치</span>
+    <div class="row"><span class="name">마트 장보기(자가조리용)<span class="note">Woolworths/Coles, 저녁 위주 고기·재료</span></span><span class="won">약 15만원</span></div>
+    <div class="row"><span class="name">외식 · 카페 · 브런치(2인, 8일)<span class="note">점심/카페 위주, 저녁 일부 외식</span></span><span class="won">약 55만원</span></div>
+  </div>
+
+  <p class="note-foot">※ 항공권은 아직 예약 전 검색 견적가라 유류할증료·환율에 따라 변동될 수 있어요. AUD 환산은 1AUD≈1,000원으로 어림잡은 값이에요. 현지교통·투어비·식비는 추정치이며, 쇼핑·기념품·개인 용돈은 별도예요.</p>
+
+</div>
+</body>
+</html>
